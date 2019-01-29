@@ -1,4 +1,5 @@
 import * as types from './mutation-types'
+import { deepCopy } from '../common/utils'
 
 export const mutations = {
   [types.SET_INGREDIENTS] (state, payload) {
@@ -10,7 +11,7 @@ export const mutations = {
   },
 
   [types.SET_RECIPE] (state, payload) {
-    state.recipe = payload
+    state.recipe = deepCopy(payload)
   },
 
   [types.ADD_RECIPE] (state, payload) {

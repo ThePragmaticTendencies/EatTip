@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import { store } from '../store/store.js'
-
 import Recipe from './Recipe.vue'
 
 export default {

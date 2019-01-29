@@ -20,14 +20,39 @@ body {
   margin-top: 15px;
 }
 
+.transparent-input, .transparent-input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border:none;
+  box-shadow: none;
+  color: white;
+}
+
+.transparent-input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
 .ingredients {
   background-color: #232323;
 }
 
-.composedRecipe {
+.composed-recipe {
   background-color: #343434;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+}
+
+.recipe-header {
+  margin-bottom: 5px;
 }
 
 .recipes {
   background-color: #878787;
+}
+
+.recipe-ingredient {
+  padding-left: 10px;
+  margin-top: 2px;
 }

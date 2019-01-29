@@ -24,6 +24,14 @@ export const removeIngredientForRecipe = ({commit}, index) => {
   commit(types.REMOVE_INGREDIENT_FOR_RECIPE, index)
 }
 
+export const addIngredientForCookedRecipe = ({commit}, payload) => {
+  commit(types.ADD_INGREDIENT_FOR_COOKED_RECIPE, payload)
+}
+
+export const removeIngredientForCookedRecipe = ({commit}, index) => {
+  commit(types.REMOVE_INGREDIENT_FOR_COOKED_RECIPE, index)
+}
+
 export const signIn = ({commit}, user_payload) => {
   commit(types.SIGN_IN, user_payload)
 }

@@ -21,7 +21,6 @@ const getters = {
     return queries.getById(id, state.ingredients)
   },
   getRecipeById: (state) => (id) => {
-    debugger
     return queries.getById(id, state.recipes)
   }
 }

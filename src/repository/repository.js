@@ -4,7 +4,13 @@ import { queries } from '../common/queries.js'
 
 export const repository = {
   ingredients: _getIngredients(),
-  recipes: _getRecipes()
+  recipes: _getRecipes(),
+  saveRecipe(id) {
+    //bigAss function that will:
+    //  check if object is correct against model
+    // extract ID from ID'd properties
+    //save them to DBs
+  }
 }
 
 function _getIngredients() {

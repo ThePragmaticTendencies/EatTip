@@ -1,31 +1,28 @@
 <template>
-  <div id="app">
-    <div class="row">
-     <div class="col-md-8">
-       <div class="row">
-         <Ingredients
-           :ingredients="this.$store.state.ingredients"
-         />
-       </div>
-     </div>
-     <div class="col-md-4">
-        <CookingTable
-        :recipe="this.$store.state.recipe"/>
-     </div>
-   </div>
-   <div class="row">
-     <Recipes
-        :recipes="this.$store.state.recipes"
-     />
-   </div>
- </div>
+<div id="app">
+  <div class="col-md-4">
+    <div v-if="isVisibleTable">
+      <CookedRecipe :recipe="this.$store.state.recipe" />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div>
+      <Ingredients :ingredients="this.$store.state.ingredients" />
+    </div>
+    <div>
+      <Recipes :recipes="this.$store.state.recipes" />
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
-import { repository } from '../repository/repository.js'
+import {
+  repository
+} from '../repository/repository.js'
 
 import Ingredients from './Ingredients.vue'
-import CookingTable from './CookingTable.vue'
+import CookedRecipe from './CookedRecipe.vue'
 import Recipes from './Recipes.vue'
 
 export default {
@@ -38,15 +35,18 @@ export default {
     }
   },
   computed: {
+    isVisibleTable() {
+      return this.$store.state.recipe && this.$store.state.recipe.ingredients.length > 0
+    }
   },
   components: {
     Ingredients,
-    CookingTable,
+    CookedRecipe,
     Recipes
   },
   created() {
     this.loadIngredients(),
-    this.loadRecipes()
+      this.loadRecipes()
   }
 }
 </script>
