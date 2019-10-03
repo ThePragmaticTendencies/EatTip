@@ -1,52 +1,26 @@
 <template>
 <div id="app">
-  <div class="col-md-4">
-    <div v-if="isVisibleTable">
-      <CookedRecipe :recipe="this.$store.state.recipe" />
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div>
-      <Ingredients :ingredients="this.$store.state.ingredients" />
-    </div>
-    <div>
-      <Recipes :recipes="this.$store.state.recipes" />
-    </div>
-  </div>
+  <p>
+    <router-link to="/cookbook">Go to CookBook</router-link>
+  </p>
+  <p>
+    <router-link to="/rabbit">Go to Bar</router-link>
+  </p>
+  <p>
+    <router-link to="/jsworkers">Go to Work</router-link>
+  </p>
+  <router-view></router-view>
 </div>
 </template>
 
 <script>
-import {
-  repository
-} from '../repository/repository.js'
-
-import Ingredients from './Ingredients.vue'
-import CookedRecipe from './CookedRecipe.vue'
-import Recipes from './Recipes.vue'
-
 export default {
   methods: {
-    loadIngredients() {
-      this.$store.dispatch('setIngredients', repository.ingredients)
-    },
-    loadRecipes() {
-      this.$store.dispatch('setRecipes', repository.recipes)
+    goBack() {
+      window.history.length > 1 ?
+        this.$router.go(-1) :
+        this.$router.push('/')
     }
-  },
-  computed: {
-    isVisibleTable() {
-      return this.$store.state.recipe && this.$store.state.recipe.ingredients.length > 0
-    }
-  },
-  components: {
-    Ingredients,
-    CookedRecipe,
-    Recipes
-  },
-  created() {
-    this.loadIngredients(),
-      this.loadRecipes()
   }
 }
 </script>

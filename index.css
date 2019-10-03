@@ -1,5 +1,5 @@
 body {
-  background: #263238;
+  background: #7489AA;
 }
 
 #app {
@@ -11,6 +11,24 @@ body {
   margin-top: 60px;
   margin-left: 60px;
   margin-right: 60px;
+}
+
+#canvas {
+  background-image: url("../src/assets/grass.png");
+  background-size: 50px;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#board {
+  background: #aad400;
+  background-size: 50px;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .tip-card {
@@ -55,4 +73,15 @@ body {
 .recipe-ingredient {
   padding-left: 10px;
   margin-top: 2px;
+}
+
+.demoCard {
+  margin: 10px;
+  Width: 500px;
+  height: 80px;
+}
+
+.demoSpan {
+  padding-top: 10px;
+  display: block;
 }

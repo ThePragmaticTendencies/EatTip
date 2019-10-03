@@ -15,17 +15,24 @@
       />
     </div>
     <div class="text-right">
-      <button class="btn btn-outline-success" type="button">Save</button>
+      <button class="btn btn-outline-success" type="button" @click="addRecipe()">Save</button>
     </div>
   </div>
 </template>
 
 <script>
 import RecipeIngredient from './RecipeIngredient.vue'
+import {
+  repository
+} from '../repository/repository.js'
 
 export default {
   props: ['recipe'],
-  methods: {},
+  methods: {
+    addRecipe() {
+      repository.saveRecipe(this.recipe)
+    }
+  },
   computed: {
     recipeName: {
       get() {
